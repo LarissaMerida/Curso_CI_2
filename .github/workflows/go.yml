@@ -48,10 +48,8 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build
       run: go build -v main.go
-
+   
   docker:
     needs: build
-    steps:
-      - name: Uses Docker.yml
-      - uses: ./.github/workflows/Docker.yml
+    uses: ./.github/workflows/Docker.yml
     
