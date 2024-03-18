@@ -51,5 +51,6 @@ jobs:
 
   docker:
     needs: build
-    uses: ./.github/workflows/Docker.yml
+    steps:
+      - uses: ./.github/workflows/Docker.yml
     
