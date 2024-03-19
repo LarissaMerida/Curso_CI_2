@@ -48,6 +48,21 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build
       run: go build -v main.go
+
+  docker:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: setup Docker Build
+    - uses: docker/build-push-action@v5.3.0
+    
+    - name: Docker login
+    - uses: docker/login-action@3.1.0
+      with:
+        username: larissamerida
+        password: ${{ secrets.PASSWORDD_DOCKER_HUB }}
       
     
 
