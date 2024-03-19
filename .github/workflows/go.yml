@@ -59,7 +59,7 @@ jobs:
       uses: docker/build-push-action@v5.3.0
 
     - name: Login to Docker Hub
-      run: echo "${{ secrets.PASSWORDD_DOCKER_HUB }}" | docker login -u "larissamerida" --password-stdin
+      run: echo "${{ secrets.PASSWORDD_DOCKER_HUB }}" | docker login -u larissamerida --password-stdin
       
     - name: Build Docker image
       run: docker build -t my-image .
