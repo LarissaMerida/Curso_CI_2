@@ -51,9 +51,5 @@ jobs:
 
   docker:
     needs: build
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: ['ubuntu-latest',]
-    steps:
-    -  uses: ./.github/workflows/Docker.yml
+    uses: ./.github/workflows/Docker.yml
+    secrets: inherit
