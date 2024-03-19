@@ -51,5 +51,5 @@ jobs:
    
   docker:
     needs: build
-    uses: ./.github/workflows/Docker.yml
+    uses: LarissaMerida/Curso_CI_2/.github/workflows/Docker.yml@903f02f0ad700571dcab5a11327e926257484132
     
