@@ -66,6 +66,13 @@ jobs:
       
     - name: Push Docker image
       run: docker push my-image
-      
-    
 
+    - name: Build and push Docker images
+      uses: docker/build-push-action@v5.3.0
+      with:
+        context: .
+        file: ./Dockerfile
+        push: true
+        tags: larissamerida/go_ci:${{github.ref_name}}
+
+  
