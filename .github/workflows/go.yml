@@ -63,15 +63,15 @@ jobs:
     - name: setup Docker Build
       uses: docker/build-push-action@v5.3.0
 
+    - name: Download a Build Artifact
+      uses: actions/download-artifact@v4.1.4
+      with:
+        # Name of the artifact to download. If unspecified, all artifacts for the run are downloaded.
+        name: programa
+
     - name: Login to Docker Hub
       run: echo "${{ secrets.PASSWORDD_DOCKER_HUB }}" | docker login -u larissamerida --password-stdin
       
-    - name: Build Docker image
-      run: docker build -t my-image .
-      
-    - name: Push Docker image
-      run: docker push my-image
-
     - name: Build and push Docker images
       uses: docker/build-push-action@v5.3.0
       with:
